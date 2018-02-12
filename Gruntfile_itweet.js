@@ -4,7 +4,7 @@ log = require('util').log;
 var _ = require('underscore');
 
 /* sign android apk */
-var android_sign_zipalign = '/Users/administrator/Library/Android/sdk/build-tools/23.0.2/zipalign';
+var android_sign_zipalign = '/Users/administrator/Library/Android-3.0/sdk/build-tools/27.0.3/zipalign';
 
 // load templates
 var templateconfig = function (config) {
@@ -125,7 +125,8 @@ module.exports = function (grunt) {
     },
     symlink: {
       options: {
-        overwrite: true
+        overwrite: true,
+        type: 'dir'
       },
       link_ts: {
         dest: 'src/_all.ts',

@@ -23,11 +23,11 @@ var templateconfig = function (config) {
     appName: 'QUALITAS',
     appID: 'rhbswiss',
     // iOS appPackage:
-    appPackage:'ch.wbss.rhb.qs',
+    //appPackage:'ch.wbss.rhb.qs',
     // Android (1.1.7 rework, revert next release)
-    // appPackage: 'ch.wbss.rhb.qs.ad',
+    appPackage: 'ch.wbss.rhb.qs.ad',
     itweetURL: 'https://rhbapp.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '1.1.7'
+    appVersion: '1.1.8'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -36,7 +36,7 @@ var templateconfig = function (config) {
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.uta',
     itweetURL: 'https://rhbapputa.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '1.1.7'
+    appVersion: '1.1.8'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -46,7 +46,7 @@ var templateconfig = function (config) {
     appPackage: 'ch.wbss.rhb.qs.dev',
     itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/rhb/1/',
     //itweetURL: 'http://192.168.1.10:8080/mvc/mobile/rhb/1/',
-    appVersion: '1.1.7',
+    appVersion: '1.1.8',
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -65,11 +65,11 @@ var templateconfig = function (config) {
       options: {
         data: data
       },
-
       files: template_files
     };
     // add for debugging of dev version
     data = _({}).extend(elem, {
+      //js_dist: 'js/dist.js'
       js_dist: 'js/dist.js'
     });
     // uta template
@@ -145,10 +145,21 @@ module.exports = function (grunt) {
       default : {
         src: ["src/_all.ts"],
         out: "build/ts.js",
-        default: {
+        //default: {
           // specifying tsconfig as a boolean will use the 'tsconfig.json' in same folder as Gruntfile.js
-          tsconfig: true
-        }
+          //tsconfig: true
+        //tsconfig: 'tsconfig.json'
+        //}
+        options: {
+          target: "es5",
+          module: "amd", //or commonjs
+          moduleResolution: "node",
+          sourceMap: true,
+          emitDecoratorMetadata: true,
+          experimentalDecorators: true,
+          removeComments: true,
+          noImplicitAny: false
+        },
       }
     },
     // Converting translated .po files into angular-compatible JavaScript files (https://angular-gettext.rocketeer.be/dev-guide/compile/)
@@ -206,7 +217,8 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          'www/js/dist_min.js': ['www/js/dist.js']
+          'www/js/dist_min.js': ['www/js/dist.js'],
+          //'www/js/app_min.js': ['www/js/app.js']
         }
       }
     },
