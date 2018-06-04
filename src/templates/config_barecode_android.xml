@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="<%=appPackage%>" version="<%=appVersion%>" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.0">
+        <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Erstellen von Fotos/Barcode lesen." />
+    </plugin>
+
+</widget>
+
+Action:
+        $ Cordova plugin list
+        $ cordova plugin rm phonegap-plugin-barcodescanner
+        $ cordova plugin add phonegap-plugin-barcodescanner@^8.0.0
