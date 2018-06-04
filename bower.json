@@ -44,7 +44,7 @@
     "ui-router-extras": "https://github.com/christopherthielen/ui-router-extras.git#648a6d9995bf376dbd2a7268dc2a67859e0f627b"
   },
   "bowerLocker": {
-    "lastUpdated": "2018-02-12T13:43:38.758Z",
+    "lastUpdated": "2018-05-29T12:22:28.207Z",
     "lockedVersions": {
       "angular": "87fbd43f0f",
       "angular-animate": "99ab9c6c68",
