@@ -5,7 +5,7 @@
 		<md-button class="md-primary md-button subheader-button" ng-click="navigationService.startNewTweet()" style="{{subheaderStyle}}">+ <span translate>overview_button_new</span></md-button>
 	</md-subheader>
 	<div layout="row" layout-sm="column">
-		<div flex="" ng-hide="vm.isCatergoryIeadsProposal()">
+		<div flex="" ng-hide="vm.isCatergoryIeadsProposal() || vm.isCatergoryFrequency()">
 			<md-card ng-click='vm.gotoDetail("app.rhb_location")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
 					<h3 translate>location_title</h3>
@@ -16,7 +16,7 @@
 					<div ng-show="storageService.currentTweet.itemQs.refTrackId"><span ng-bind="storageService.currentTweet.itemQs.refTrackName"></span></div>
 					<div ng-show="storageService.currentTweet.itemQs.trackPosition"><span ng-bind="storageService.currentTweet.itemQs.trackPosition"></span> km</div>
 				</div>
-				<div ng-show="!storageService.currentTweet.itemQs.refLocationId && !storageService.currentTweet.itemQs.refTrackId && !storageService.currentTweet.itemQs.trackPosition " layout="column" layout-align="center center" class="md-padding">
+				<div ng-show="!storageService.currentTweet.itemQs.refLocationId && !storageService.currentTweet.itemQs.refTrackId" layout="column" layout-align="center center" class="md-padding">
 					<span class="invalid" translate>overview_label_location_placeholder</span>
 				</div>
 				<div ng-show="!vm.isValidNumber(storageService.currentTweet.itemQs.trackPosition)" layout="column" layout-align="center center"
@@ -55,7 +55,27 @@
 			</md-card>
 		</div>
 	</div>
-	<div ng-hide="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
+	<!-- Frequenzerhebung -->
+	<div layout="row" layout-sm="column" ng-show="vm.isCatergoryFrequency()">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.rhb_frequency")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3 translate>Frequenzerhebung</h3>
+				</div>
+				<md-divider></md-divider>
+				<div  layout="column" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.itemQs.refTrainId" class="invalid" translate>Es ist keine Zugnummer zugewiesen.</span>
+					<span ng-show="storageService.currentTweet.itemQs.refTrainId" ng-bind="storageService.currentTweet.itemQs.refTrainName"></span>
+				</div>
+				<div layout="column" layout-align="center center" class="md-padding">
+					<span ng-hide="vm.hasFrequencyValues()" class="invalid" translate>Es sind keine Frequenzen erfasst.</span>
+					<span ng-show="vm.hasFrequencyValues()" ng-bind=" vm.getFrequencyValues()"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div ng-hide="vm.isCatergoryIeadsProposal() || vm.isCatergoryFrequency()" layout="row" layout-sm="column">
 		<div flex>
 			<md-card ng-click='vm.gotoDetail("app.text")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -132,7 +152,7 @@
 		</div>
 	</div>
 
-	<div layout="row" layout-sm="column">
+	<div layout="row" layout-sm="column" ng-hide="vm.isCatergoryFrequency()">
 		<div flex>
 			<md-card ng-click='vm.gotoDetail("app.rhb_visibility")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -147,7 +167,7 @@
 			</md-card>
 		</div>
 	</div>
-	<div layout="row" layout-sm="column">
+	<div layout="row" layout-sm="column" ng-hide="vm.isCatergoryFrequency()">
 		<div flex ng-hide="vm.isCatergoryIeadsProposal()">
 			<md-card ng-click='vm.gotoDetail("app.rhb_attribute_involvedPersons")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -185,7 +205,7 @@
 			</md-card>
 		</div>
 	</div>
-	<div layout="row" layout-sm="column">
+	<div layout="row" layout-sm="column" ng-hide="vm.isCatergoryFrequency()">
 		<div flex>
 			<md-card ng-click='vm.gotoDetail("app.photo")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>

@@ -44,6 +44,13 @@ module itweet.navigation {
                     }
                     return new State('app.rhb_qr_inventory');
                 }
+                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "FREQUENCY") {
+                    let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
+                    if (elems.length > 0) {
+                        return new State('app.overview');
+                    }
+                    return new State('app.rhb_frequency');
+                }
                 return new State('app.multicategory', { parentId: undefined });
             },
             'app.multicategory': (n: NavigationService,params) => {
@@ -68,6 +75,9 @@ module itweet.navigation {
                     }
                     return new State('app.photo');
                 }
+                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "FREQUENCY") {
+                    return new State('app.overview');
+                }
 
                 let parentId = n.ItweetStorage.currentTweet.itemQs.refItemCategoryQsId;
                 let resp = new State('app.rhb_location', { parentId: parentId });
@@ -86,7 +96,8 @@ module itweet.navigation {
             'app.text_idea_why': (n: NavigationService,params) => new State('app.text_idea_how'),
             'app.text_idea_how': (n: NavigationService,params) => new State('app.photo'),
             'app.rhb_attribute_involvedPersons': (n: NavigationService) => new State('app.rhb_visibility'),
-            'app.rhb_visibility': (n: NavigationService) => new State('app.overview')
+            'app.rhb_visibility': (n: NavigationService) => new State('app.overview'),
+            'app.rhb_frequency': (n: NavigationService) => new State('app.overview')
         };
 
         constructor(

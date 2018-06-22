@@ -1,0 +1,47 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+    <md-subheader class="md-primary" style="{{::subheaderStyle}}">
+        <span translate>attribute_train_subheader</span>
+    </md-subheader>
+    <div class="md-padding" ng-show="vm.loaded">
+        <p translate>train_train_number</p>
+        <md-autocomplete
+                md-delay="200"
+                md-selected-item="vm.selectedTrain"
+                md-search-text="vm.searchTrainText"
+                md-items="train in vm.querySearch('train', vm.searchTrainText,vm.trains)"
+                md-item-text="vm.getFullTrain(train)"
+                md-min-length="0"
+                placeholder="{{'search' | translate}}">
+            <md-item-template>
+                <span md-highlight-text="vm.searchTrainText" md-highlight-flags="i">{{vm.getFullTrain(train)}}</span>
+            </md-item-template>
+        </md-autocomplete>
+    </div>
+
+    <div ng-show="vm.loaded==false" layout="row" layout-sm="column" layout-align="center center">
+        <p translate>loading</p>
+    </div>
+
+    <div class="md-padding" ng-show="vm.loaded">
+        <p translate>Anzahl</p>
+        <md-card ng-show="vm.mappingItemQsStatistics.length !== 0">
+            <md-list>
+                <md-list-item class="md-2-line" ng-repeat="mappingItemQsStatistic in vm.mappingItemQsStatistics">
+                    <div flex="30" style="margin-top: 7px">
+                        <span>{{ mappingItemQsStatistic.refStatistic.name }}</span>
+                    </div>
+                    <md-input-container flex="30">
+                        <input ng-model="mappingItemQsStatistic.quantity" maxlength="3" type="tel" style="text-align:right; width: 50px">
+                    </md-input-container>
+                </md-list-item>
+            </md-list>
+        </md-card>
+    </div>
+</md-content>
+
+<footer>
+    <md-button type="submit" ng-click="vm.nextClicked()" class="md-primary footer-button" style="{{::footerStyle}}">
+        <span translate>location_button_next</span>
+    </md-button>
+</footer>
