@@ -1,0 +1,11 @@
+{
+    "mediaPath": "media",
+    "icon": {
+        "filename": "assets/rhb/source/rhb_qm_icon_android.png",
+        "background": "E30613"
+    },
+    "splash": {
+        "filename": "assets/rhb/source/rhb_train_splash_1536x2048.png",
+        "background": "E30613"
+    }
+}

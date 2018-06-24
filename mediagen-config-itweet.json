@@ -1,0 +1,11 @@
+{
+    "mediaPath": "media",
+    "icon": {
+        "filename": "assets/itweet/source/launch_image_2208_1242.png",
+        "background": "fff"
+    },
+    "splash": {
+        "filename": "assets/itweet/source/launch_image_2208_1242.png",
+        "background": "fff"
+    }
+}
