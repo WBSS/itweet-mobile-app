@@ -54,6 +54,7 @@
 /// <reference path='ext_rhb/visibility/visibility.ts' />
 /// <reference path='ext_rhb/qrInventory/qrInventory.ts' />
 /// <reference path="ext_rhb/text/text.ts" />
+/// <reference path='ext_rhb/frequency/frequency.ts' />
 
 // *** rhb services *** //
 /// <reference path='ext_rhb/navigationService.ts' />

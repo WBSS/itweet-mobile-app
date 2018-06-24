@@ -141,6 +141,11 @@ module itweet.model {
         name: string
         enabled: boolean
     }
+    export interface Statistic {
+        id: string
+        name: string
+        enabled: boolean
+    }
     export interface MetadataResponse {
         persons: Person[]
         categoriesQs: CategoriesQs[]
@@ -148,6 +153,7 @@ module itweet.model {
         wagons: Wagon[]
         locations: Location[]
         tracks: Track[]
+        statistics: Statistic[]
     }
 
     export class itemQ {
@@ -165,6 +171,12 @@ module itweet.model {
         dateEvent: string = null
         wagonsIds:string[] = null
         wagonsNames:string[] = null
+        statistics: MappingItemQsStatistic[] = null
+    }
+
+    export class MappingItemQsStatistic {
+        refStatistic: Statistic;
+        quantity: number;
     }
 
     export class RefItemVisibility {

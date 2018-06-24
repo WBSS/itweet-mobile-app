@@ -11,10 +11,16 @@ module itweet.overview {
                 }
                 return false;
             }
+            else if (this.isCatergoryFrequency()) {
+                if (currentTweet.itemQs.dateEvent && currentTweet.itemQs.refTrainId && this.hasFrequencyValues()) {
+                    return true;
+                }
+                return false;
+            }
             else
             {
                 if (currentTweet.txt
-                    && (currentTweet.itemQs.refLocationId || currentTweet.itemQs.refTrackId || currentTweet.itemQs.trackPosition)
+                    && (currentTweet.itemQs.refLocationId || currentTweet.itemQs.refTrackId)
                     && currentTweet.refItemCategoryId && this.isValidVehicle() && this.isValidNumber(currentTweet.itemQs.trackPosition)){
                     //&& (currentTweet.itemQs.refTrainId || currentTweet.itemQs.refWagonId)) {
                     return true;
@@ -26,6 +32,8 @@ module itweet.overview {
         isCatergoryIeadsProposal() {if(this.$scope.storageService.currentTweet.refItemCategory.short_ === "IDEAS") return true; else return false;}
 
         isCatergoryComplaint() {if(this.$scope.storageService.currentTweet.refItemCategory.short_ === "COMPLAINT") return true; else return false;}
+
+        isCatergoryFrequency() {if(this.$scope.storageService.currentTweet.refItemCategory.short_ === "FREQUENCY") return true; else return false;}
         
         gotoDetail(destination:string){
         	if(destination === 'app.category'){
@@ -52,6 +60,32 @@ module itweet.overview {
                 return true;
             }
             return isFinite(Number(nr));
+        }
+
+        getFrequencyValues(): string {
+            var frequencyValues: string = "";
+            if (this.$scope.storageService.currentTweet.itemQs.statistics) {
+                for (var i = 0; i < this.$scope.storageService.currentTweet.itemQs.statistics.length; i++) {
+                    if (frequencyValues) {
+                        frequencyValues += ", ";
+                    }
+                    frequencyValues += this.$scope.storageService.currentTweet.itemQs.statistics[i].refStatistic.name + ": ";
+                    frequencyValues += this.$scope.storageService.currentTweet.itemQs.statistics[i].quantity;
+                }
+            }
+            return frequencyValues;
+        }
+
+        hasFrequencyValues(): boolean {
+            if (!this.$scope.storageService.currentTweet.itemQs.statistics) {
+                return false;
+            }
+            for (var i = 0; i < this.$scope.storageService.currentTweet.itemQs.statistics.length; i++) {
+                if (this.$scope.storageService.currentTweet.itemQs.statistics[i].quantity > 0) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         sendTweet() {
