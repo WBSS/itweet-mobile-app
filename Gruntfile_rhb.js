@@ -23,9 +23,9 @@ var templateconfig = function (config) {
     appName: 'QUALITAS',
     appID: 'rhbswiss',
     // iOS appPackage:
-    //appPackage:'ch.wbss.rhb.qs',
+    appPackage:'ch.wbss.rhb.qs',
     // Android (1.1.7 rework, revert next release)
-    appPackage: 'ch.wbss.rhb.qs.ad',
+    //appPackage: 'ch.wbss.rhb.qs.ad',
     itweetURL: 'https://rhbapp.itweet.ch/mvc/mobile/rhb/1/',
     appVersion: '1.1.8'
     //splash: 'rhb_splash_logo.png',
@@ -46,7 +46,7 @@ var templateconfig = function (config) {
     appPackage: 'ch.wbss.rhb.qs.dev',
     itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/rhb/1/',
     //itweetURL: 'http://192.168.1.10:8080/mvc/mobile/rhb/1/',
-    appVersion: '1.1.8',
+    appVersion: '1.1.8'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -250,12 +250,12 @@ module.exports = function (grunt) {
         cmd: 'ls -l **'
       },
       signer_android: {
-        cmd: 'cd platforms/android/build/outputs/apk/release/ && echo itweet | jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 ' +
-        '-keystore ../../../../../../publish/wbss_mobileapps.keystore android-release-unsigned.apk wbss_mobileapps && ' +
-        android_sign_zipalign + ' -v 4 android-release-unsigned.apk  android.apk '
+        cmd: 'cd platforms/android/app/build/outputs/apk/release/ && echo itweet | jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 ' +
+        '-keystore ../../../../../../../publish/wbss_mobileapps.keystore app-release-unsigned.apk wbss_mobileapps && ' +
+        android_sign_zipalign + ' -v 4 app-release-unsigned.apk  android.apk '
       },
       mediagen: {
-        cmd: 'mediagen'
+        cmd: 'npm install -g cordova-media-gen'
       }
     },
     // automatic concatenation of installed Bower components (https://www.npmjs.com/package/grunt-bower-concat)
