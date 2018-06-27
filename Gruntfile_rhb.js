@@ -27,7 +27,7 @@ var templateconfig = function (config) {
     // Android (1.1.7 rework, revert next release)
     //appPackage: 'ch.wbss.rhb.qs.ad',
     itweetURL: 'https://rhbapp.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '1.1.8'
+    appVersion: '1.1.9'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -36,7 +36,7 @@ var templateconfig = function (config) {
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.uta',
     itweetURL: 'https://rhbapputa.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '1.1.8'
+    appVersion: '1.1.9'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -46,7 +46,7 @@ var templateconfig = function (config) {
     appPackage: 'ch.wbss.rhb.qs.dev',
     itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/rhb/1/',
     //itweetURL: 'http://192.168.1.10:8080/mvc/mobile/rhb/1/',
-    appVersion: '1.1.8'
+    appVersion: '1.1.9'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
