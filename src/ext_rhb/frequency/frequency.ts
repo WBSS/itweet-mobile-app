@@ -63,6 +63,12 @@ module itweet.frequency {
 				}
 			}
 			if (this.$scope.storageService.currentTweet.itemQs.statistics) {
+            	// Set null for 0-quantities
+                for (var i = 0; i < this.$scope.storageService.currentTweet.itemQs.statistics.length; i++) {
+                	if (this.$scope.storageService.currentTweet.itemQs.statistics[i].quantity == 0) {
+                        this.$scope.storageService.currentTweet.itemQs.statistics[i].quantity = null;
+					}
+                }
 				this.mappingItemQsStatistics = this.$scope.storageService.currentTweet.itemQs.statistics;
 			} else {
                 this.initStatistics();
@@ -80,7 +86,7 @@ module itweet.frequency {
                 if (this.refStatistics[i].enabled) {
                     mappingItemQsStatistic = new itweet.model.MappingItemQsStatistic();
                     mappingItemQsStatistic.refStatistic = this.refStatistics[i];
-                    mappingItemQsStatistic.quantity = 0;
+                    mappingItemQsStatistic.quantity = null;
                     this.mappingItemQsStatistics.push(mappingItemQsStatistic);
                 }
             }
@@ -152,6 +158,9 @@ module itweet.frequency {
 				this.$scope.storageService.currentTweet.itemQs.refTrainId = null;
 				this.$scope.storageService.currentTweet.itemQs.refTrainName = null;
 			}
+
+			// Set visibility
+            this.$scope.storageService.currentTweet.refItemVisibilityId = 3; // User group
 
 			// Clean statistics
             for (var i = 0; i < this.mappingItemQsStatistics.length; i++) {
