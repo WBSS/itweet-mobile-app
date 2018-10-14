@@ -79,7 +79,8 @@
         };
         function onDeviceReady() {
             if (navigator.globalization) {
-                navigator.globalization.getLocaleName(document.langOkay, document.langError);
+                //navigator.globalization.getLocaleName(document.langOkay, document.langError);
+                navigator.globalization.getPreferredLanguage(document.langOkay, document.langError);
             } else {
                 document.langError();
             }

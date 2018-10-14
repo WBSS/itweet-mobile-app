@@ -24,8 +24,8 @@ var templateconfig = function (config) {
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet',
     itweetURL: 'https://www.itweet.ch/mvc/mobile/1/',
-    //appVersion: '1.0.5', // Google play store
-    appVersion: '1.3.1', // Apple App stoer
+    //appVersion: '1.0.6', // Google play store (new installation)
+    appVersion: '1.3.3', // Apple App store
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -34,7 +34,7 @@ var templateconfig = function (config) {
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.uta',
     itweetURL: 'https://uta.itweet.ch/mvc/mobile/1/',
-    appVersion: '1.0.5',
+    appVersion: '1.1.9',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -43,7 +43,7 @@ var templateconfig = function (config) {
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.dev',
     itweetURL: 'https://dev.itweet.ch/mvc/mobile/1/',
-    appVersion: '1.0.5',
+    appVersion: '1.1.9',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -250,9 +250,9 @@ module.exports = function (grunt) {
         cmd: 'ls -l **'
       },
       signer_android: {
-        cmd: 'cd platforms/android/build/outputs/apk/ && echo itweet | jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 ' +
-        '-keystore ../../../../../publish/wbss_mobileapps.keystore android-armv7-release-unsigned.apk wbss_mobileapps && ' +
-        android_sign_zipalign + ' -v 4 android-armv7-release-unsigned.apk  android.apk '
+        cmd: 'cd platforms/android/app/build/outputs/apk/release/ && echo itweet | jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 ' +
+          '-keystore ../../../../../../../publish/wbss_mobileapps.keystore app-release-unsigned.apk wbss_mobileapps && ' +
+          android_sign_zipalign + ' -v 4 app-release-unsigned.apk  android.apk '
       },
       mediagen: {
         cmd: 'mediagen'

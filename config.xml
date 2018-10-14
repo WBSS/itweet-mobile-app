@@ -1,55 +1,39 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ch.wbss.rhb.qs.dev" version="1.1.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>QUALIDEV</name>
+<widget id="ch.wbss.rhb.qs" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>QUALITAS</name>
     <description>
     </description>
     <author email="info@wbss.ch" href="https://www.wbss.ch">
         W.B.S.S GmbH
     </author>
-
     <content src="index.html" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <access origin="*" />
-
-    <!-- iOS only preferences -->
-    <preference name="EnableViewportScale" value="true"/>
-    <preference name="TopActivityIndicator" value="white"/>
-    <preference name="SuppressesIncrementalRendering" value="false"/>
+    <preference name="EnableViewportScale" value="true" />
+    <preference name="TopActivityIndicator" value="white" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
     <preference name="UIWebViewDecelerationSpeed" value="normal" />
     <preference name="target-device" value="universal" />
     <preference name="deployment-target" value="9.0" />
     <preference name="SuppressesLongPressGesture" value="false" />
     <preference name="Suppresses3DTouchGesture" value="true" />
     <preference name="BackupWebStorage" value="local" />
-
-    <!-- Android only preferences -->
-    <preference name="KeepRunning" value="false"/>
-    <preference name="LoadUrlTimeoutValue" value="20000"/>
-    <preference name="LogLevel" value="ERROR"/>
+    <preference name="KeepRunning" value="false" />
+    <preference name="LoadUrlTimeoutValue" value="20000" />
+    <preference name="LogLevel" value="ERROR" />
     <preference name="DefaultVolumeStream" value="call" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="android-targetSdkVersion" value="27" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="minSdkVersion" value="19" />
-
-    <!--
-    <preference name="keepRunning" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#303F9F" />
-    <preference name="DisallowOverscroll" value="true"/>
-    <preference name="UIWebViewBounce" value="false" />
-    <preference name="BackupWebStorage" value="local"/>
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />-->
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="5000" /><!--
-    <plugin name="phonegap-plugin-barcodescanner" spec="6.0.8">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="Erstellen von Fotos/Barcode lesen." />
-    </plugin>-->
+    <preference name="SplashScreenDelay" value="5000" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.0">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Erstellen von Fotos/Barcode lesen." />
     </plugin>
-    <plugin name="cordova-plugin-camera" spec="4.0.3" >
+    <plugin name="cordova-plugin-camera" spec="4.0.3">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Erstellen von Fotos/Barcode lesen." />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Laden von Fotos aus dem Album." />
     </plugin>
@@ -67,65 +51,47 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
     <plugin name="cordova-plugin-globalization" spec="1.11.0" />
     <plugin name="cordova-plugin-device" spec="2.0.2" />
-
     <platform name="android">
-        <icon src="assets/rhb/icon_android/icon-port-hdpi.png" density="hdpi"/>
-        <icon src="assets/rhb/icon_android/icon-port-ldpi.png" density="ldpi"/>
-        <icon src="assets/rhb/icon_android/icon-port-mdpi.png" density="mdpi"/>
-        <icon src="assets/rhb/icon_android/icon-port-xhdpi.png" density="xhdpi"/>
-        <icon src="assets/rhb/icon_android/icon-port-xxhdpi.png" density="xxhdpi"/>
-        <icon src="assets/rhb/icon_android/icon-port-xxxhdpi.png" density="xxxhdpi"/>
-
-        <splash src="assets/rhb/splash_android/splash-port-hdpi.png" density="port-hdpi"/>
-        <splash src="assets/rhb/splash_android/splash-port-ldpi.png" density="port-ldpi"/>
-        <splash src="assets/rhb/splash_android/splash-port-mdpi.png" density="port-mdpi"/>
-        <splash src="assets/rhb/splash_android/splash-port-xhdpi.png" density="port-xhdpi"/>
-        <splash src="assets/rhb/splash_android/splash-port-xxhdpi.png" density="port-xxhdpi"/>
-        <splash src="assets/rhb/splash_android/splash-port-xxxhdpi.png" density="port-xxxhdpi"/>
-
+        <icon density="hdpi" src="assets/rhb/icon_android/icon-port-hdpi.png" />
+        <icon density="ldpi" src="assets/rhb/icon_android/icon-port-ldpi.png" />
+        <icon density="mdpi" src="assets/rhb/icon_android/icon-port-mdpi.png" />
+        <icon density="xhdpi" src="assets/rhb/icon_android/icon-port-xhdpi.png" />
+        <icon density="xxhdpi" src="assets/rhb/icon_android/icon-port-xxhdpi.png" />
+        <icon density="xxxhdpi" src="assets/rhb/icon_android/icon-port-xxxhdpi.png" />
+        <splash density="port-hdpi" src="assets/rhb/splash_android/splash-port-hdpi.png" />
+        <splash density="port-ldpi" src="assets/rhb/splash_android/splash-port-ldpi.png" />
+        <splash density="port-mdpi" src="assets/rhb/splash_android/splash-port-mdpi.png" />
+        <splash density="port-xhdpi" src="assets/rhb/splash_android/splash-port-xhdpi.png" />
+        <splash density="port-xxhdpi" src="assets/rhb/splash_android/splash-port-xxhdpi.png" />
+        <splash density="port-xxxhdpi" src="assets/rhb/splash_android/splash-port-xxxhdpi.png" />
     </platform>
-
     <platform name="ios">
-
-        <!-- iOS 8.0+ -->
-        <!-- iPhone 6 Plus  -->
-        <icon src="assets/rhb/icon_ios/icon-60@3x.png" width="180" height="180" />
-        <!-- iOS 7.0+ -->
-        <!-- iPhone / iPod Touch  -->
-        <icon src="assets/rhb/icon_ios/icon-60.png" width="60" height="60" />
-        <icon src="assets/rhb/icon_ios/icon-60@2x.png" width="120" height="120" />
-        <!-- iPad -->
-        <icon src="assets/rhb/icon_ios/icon-76.png" width="76" height="76" />
-        <icon src="assets/rhb/icon_ios/icon-76@2x.png" width="152" height="152" />
-        <!-- iOS 6.1 -->
-        <!-- Spotlight Icon -->
-        <icon src="assets/rhb/icon_ios/icon-40.png" width="40" height="40" />
-        <icon src="assets/rhb/icon_ios/icon-40@2x.png" width="80" height="80" />
-        <!-- iPhone / iPod Touch -->
-        <icon src="assets/rhb/icon_ios/icon.png" width="57" height="57" />
-        <icon src="assets/rhb/icon_ios/icon@2x.png" width="114" height="114" />
-        <!-- iPad -->
-        <icon src="assets/rhb/icon_ios/icon-72.png" width="72" height="72" />
-        <icon src="assets/rhb/icon_ios/icon-72@2x.png" width="144" height="144" />
-        <!-- iPhone Spotlight and Settings Icon -->
-        <icon src="assets/rhb/icon_ios/icon-small.png" width="29" height="29" />
-        <icon src="assets/rhb/icon_ios/icon-small@2x.png" width="58" height="58" />
-        <!-- iPad Spotlight and Settings Icon -->
-        <icon src="assets/rhb/icon_ios/icon-50.png" width="50" height="50" />
-        <icon src="assets/rhb/icon_ios/icon-50@2x.png" width="100" height="100" />
-
-        <!-- images are determined by width and height. The following are supported -->
-        <splash src="assets/rhb/splash_ios/Default~iphone.png" width="320" height="480"/>
-        <splash src="assets/rhb/splash_ios/Default@2x~iphone.png" width="640" height="960"/>
-        <splash src="assets/rhb/splash_ios/Default-Portrait~ipad.png" width="768" height="1024"/>
-        <splash src="assets/rhb/splash_ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
-        <splash src="assets/rhb/splash_ios/Default-Landscape~ipad.png" width="1024" height="768"/>ß
-        <splash src="assets/rhb/splash_ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
-        <splash src="assets/rhb/splash_ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
-        <splash src="assets/rhb/splash_ios/Default-667h.png" width="750" height="1334"/>
-        <splash src="assets/rhb/splash_ios/Default-736h.png" width="1242" height="2208"/>
-        <splash src="assets/rhb/splash_ios/Default-Landscape-736h.png" width="2208" height="1242"/>
-
+        <icon height="180" src="assets/rhb/icon_ios/icon-60@3x.png" width="180" />
+        <icon height="60" src="assets/rhb/icon_ios/icon-60.png" width="60" />
+        <icon height="120" src="assets/rhb/icon_ios/icon-60@2x.png" width="120" />
+        <icon height="76" src="assets/rhb/icon_ios/icon-76.png" width="76" />
+        <icon height="152" src="assets/rhb/icon_ios/icon-76@2x.png" width="152" />
+        <icon height="40" src="assets/rhb/icon_ios/icon-40.png" width="40" />
+        <icon height="80" src="assets/rhb/icon_ios/icon-40@2x.png" width="80" />
+        <icon height="57" src="assets/rhb/icon_ios/icon.png" width="57" />
+        <icon height="114" src="assets/rhb/icon_ios/icon@2x.png" width="114" />
+        <icon height="72" src="assets/rhb/icon_ios/icon-72.png" width="72" />
+        <icon height="144" src="assets/rhb/icon_ios/icon-72@2x.png" width="144" />
+        <icon height="29" src="assets/rhb/icon_ios/icon-small.png" width="29" />
+        <icon height="58" src="assets/rhb/icon_ios/icon-small@2x.png" width="58" />
+        <icon height="50" src="assets/rhb/icon_ios/icon-50.png" width="50" />
+        <icon height="100" src="assets/rhb/icon_ios/icon-50@2x.png" width="100" />
+        <splash height="480" src="assets/rhb/splash_ios/Default~iphone.png" width="320" />
+        <splash height="960" src="assets/rhb/splash_ios/Default@2x~iphone.png" width="640" />
+        <splash height="1024" src="assets/rhb/splash_ios/Default-Portrait~ipad.png" width="768" />
+        <splash height="2048" src="assets/rhb/splash_ios/Default-Portrait@2x~ipad.png" width="1536" />
+        <splash height="768" src="assets/rhb/splash_ios/Default-Landscape~ipad.png" width="1024" />
+        <splash height="1536" src="assets/rhb/splash_ios/Default-Landscape@2x~ipad.png" width="2048" />
+        <splash height="1136" src="assets/rhb/splash_ios/Default-568h@2x~iphone.png" width="640" />
+        <splash height="1334" src="assets/rhb/splash_ios/Default-667h.png" width="750" />
+        <splash height="2208" src="assets/rhb/splash_ios/Default-736h.png" width="1242" />
+        <splash height="1242" src="assets/rhb/splash_ios/Default-Landscape-736h.png" width="2208" />
     </platform>
-
+    <engine name="android" spec="^7.0.0" />
+    <engine name="ios" spec="^4.5.5" />
 </widget>

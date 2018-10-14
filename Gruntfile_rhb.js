@@ -27,7 +27,7 @@ var templateconfig = function (config) {
     // Android (1.1.7 rework, revert next release)
     //appPackage: 'ch.wbss.rhb.qs.ad',
     itweetURL: 'https://rhbapp.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '1.1.9'
+    appVersion: '1.2.0'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -36,7 +36,7 @@ var templateconfig = function (config) {
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.uta',
     itweetURL: 'https://rhbapputa.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '1.1.9'
+    appVersion: '1.2.0'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -46,7 +46,7 @@ var templateconfig = function (config) {
     appPackage: 'ch.wbss.rhb.qs.dev',
     itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/rhb/1/',
     //itweetURL: 'http://192.168.1.10:8080/mvc/mobile/rhb/1/',
-    appVersion: '1.1.9'
+    appVersion: '1.2.0'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -386,7 +386,7 @@ module.exports = function (grunt) {
   // build&deploy on local device (USB adapter)
   //---------------------------------------------//
   // android
-  grunt.registerTask('run-android_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs.ad','_clean_platform_android','_compile-and-run_android']);
+  grunt.registerTask('run-android_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs','_clean_platform_android','_compile-and-run_android']);
   grunt.registerTask('run-android_uta', ['_clean_build','template:uta_ch.wbss.rhb.qs.uta','_clean_platform_android','_compile-and-run_android']);
   grunt.registerTask('run-android_dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev','_clean_platform_android','_compile-and-run_android']);
   // ios
@@ -405,7 +405,7 @@ module.exports = function (grunt) {
   // sign android apk
   grunt.registerTask('sig_android_apk-file', ['exec:signer_android']);
   // build&sign to folder platform (cordova android)
-  grunt.registerTask('build_sign-android_release_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs.ad','_clean_platform_android','_compile-and-sign_android_release']);
+  grunt.registerTask('build_sign-android_release_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs','_clean_platform_android','_compile-and-sign_android_release']);
   grunt.registerTask('build_sign-android_release_uta', ['_clean_build','template:uta_ch.wbss.rhb.qs.uta','_clean_platform_android', '_compile-and-sign_android_release']);
   grunt.registerTask('build_sign-android_release_dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev','_clean_platform_android','_compile-and-sign_android_release']);
 
