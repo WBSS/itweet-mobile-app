@@ -36,6 +36,7 @@ module itweet.settings {
                 {title: gettextCatalog.getString("error_html5_container_loading_title"), state: "app.alltweets"},
                 {title: gettextCatalog.getString("settings_title_help"), state: "app.help"},
                 {title: gettextCatalog.getString("settings_title_demands"), state: "app.disclaimer"},
+                {title: gettextCatalog.getString("settings_title_privacy"), state: "app.privacy"},
                 {title: gettextCatalog.getString("settings_title_clear_cache"), state: ""}
             ];
 

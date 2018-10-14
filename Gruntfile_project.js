@@ -13,6 +13,15 @@ module.exports = function (grunt) {
     exec: {
       // cordova
       //--------------------------------//
+      show_root_dir:{
+        cmd: 'pwd'
+      },
+      show_sell:{
+        cmd: 'echo $SHELL'
+      },
+      show_path:{
+        cmd: 'echo $PATH'
+      },
       show_node_version:{
         cmd: 'node -v'
       },
@@ -88,7 +97,7 @@ module.exports = function (grunt) {
 
   // Register tasks
   //---------------//
-  grunt.registerTask('show_environment', ['exec:show_node_version','exec:show_npm_version','exec:show_bower_version','exec:show_cordova_version']);
+  grunt.registerTask('show_environment', ['exec:show_root_dir','exec:show_sell','exec:show_path','exec:show_node_version','exec:show_npm_version','exec:show_bower_version','exec:show_cordova_version']);
 
   // create doc tasks
   //---------------//

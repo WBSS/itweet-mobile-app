@@ -28,23 +28,11 @@ module itweet.alltweets {
 
             this.startInAppBrowser();
         }
-        /*
-        showProgressDialog() {
-            this.$mdDialog.show({
-                template:   '<md-dialog>' +
-                            '   <md-dialog-content layout="row" layout-sm="column" layout-align="center center">' +
-                            '       <div flex><p>' + this.gettextCatalog.getString("alltweet_item_list_is_loading") + '...</p></div>' +
-                            '       <div flex><md-progress-circular md-mode="indeterminate"></md-progress-circular></div>' +
-                            '  </md-dialog-content>' +
-                            '</md-dialog>'
-            });
-        }*/
 
         startInAppBrowser(): void {
             this.$scope.networkServiceHolder['primary'].loading = true;
             var url = this.AllTweetsUrl();
 
-            //this.showProgressDialog();
             this.$mdDialog.show({template: this.gettextCatalog.getString("alltweet_item_list_is_loading") + '...'});
             this.inappBrowser = cordova.InAppBrowser.open(url, '_blank', 'hidden=yes,location=no,toolbar=yes');
             //this.inappBrowser = window.open(url, '_blank', '');

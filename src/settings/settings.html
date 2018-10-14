@@ -1,7 +1,7 @@
 <ng-include src="'app/menu.html'"></ng-include>
 <md-content flex>
 <md-list>
-<md-item ng-repeat="item in ::items track by item.title">
+<md-item ng-repeat="item in ::items track by item.title"><span>
 	<md-item-content>
 		<md-button layout-fill role="button" tabIndex="0" ng-click="vm.itemClicked(item.state)" layout="start center">
 	            {{::item.title}}

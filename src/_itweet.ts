@@ -16,6 +16,7 @@
 /// <reference path='settings/settings.ts' />
 /// <reference path='settings/help.ts' />
 /// <reference path='settings/disclaimer.ts' />
+/// <reference path='settings/privacy.ts' />
 /// <reference path='alltweets/alltweets.ts' />
 /// <reference path='mytweets/mytweets.ts' />
 /// <reference path='login/login.ts' />
