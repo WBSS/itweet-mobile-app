@@ -7,7 +7,6 @@ plugins/
 www/css/
 www/img
 www/js
-www/*.html
 .idea/
 build/
 temp/
